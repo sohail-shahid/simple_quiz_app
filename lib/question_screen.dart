@@ -30,22 +30,12 @@ class _QuestionScreenState extends State<QuestionScreen> {
           const SizedBox(
             height: 20,
           ),
-          MultipleOptionButton(
-            optionText: currentQuestion.options[0],
-            onOptionSelect: () {},
-          ),
-          MultipleOptionButton(
-            optionText: currentQuestion.options[1],
-            onOptionSelect: () {},
-          ),
-          MultipleOptionButton(
-            optionText: currentQuestion.options[2],
-            onOptionSelect: () {},
-          ),
-          MultipleOptionButton(
-            optionText: currentQuestion.options[3],
-            onOptionSelect: () {},
-          ),
+          ...currentQuestion.options.map((option) {
+            return MultipleOptionButton(
+              optionText: option,
+              onOptionSelect: () {},
+            );
+          }),
         ],
       ),
     );
