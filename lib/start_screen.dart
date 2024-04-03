@@ -21,7 +21,7 @@ class StartScreen extends StatelessWidget {
           Text(
             'Learn Flutter the fun way',
             style: GoogleFonts.lato(
-              fontSize: 30,
+              fontSize: 20,
               fontWeight: FontWeight.bold,
               color: Colors.black,
             ),
@@ -41,7 +41,7 @@ class StartScreen extends StatelessWidget {
             label: Text(
               'Start Quize',
               style: GoogleFonts.lato(
-                fontSize: 20,
+                fontSize: 16,
                 fontWeight: FontWeight.bold,
                 color: Colors.black,
               ),

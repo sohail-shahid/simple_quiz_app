@@ -12,7 +12,10 @@ class MultipleOptionButton extends StatelessWidget {
       onPressed: onOptionSelect,
       child: Text(
         optionText,
-        style: const TextStyle(color: Colors.black),
+        style: const TextStyle(
+          color: Colors.black,
+          fontSize: 14,
+        ),
         textAlign: TextAlign.center,
       ),
     );

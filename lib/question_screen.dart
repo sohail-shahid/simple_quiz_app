@@ -4,7 +4,8 @@ import 'package:simple_quiz_app/custom_widgets/multiple_option_button.dart';
 import 'package:simple_quiz_app/data_providers/multiple_choice_quiz.dart';
 
 class QuestionScreen extends StatefulWidget {
-  const QuestionScreen({super.key});
+  const QuestionScreen({super.key, required this.onAnswerSelect});
+  final void Function(String answer) onAnswerSelect;
   @override
   State<QuestionScreen> createState() {
     return _QuestionScreenState();
@@ -13,7 +14,8 @@ class QuestionScreen extends StatefulWidget {
 
 class _QuestionScreenState extends State<QuestionScreen> {
   int currentQuestionIndex = 0;
-  void onOptionSelect() {
+  void onOptionSelect(String selectedOption) {
+    widget.onAnswerSelect(selectedOption);
     setState(() {
       currentQuestionIndex += 1;
     });
@@ -21,12 +23,11 @@ class _QuestionScreenState extends State<QuestionScreen> {
 
   @override
   Widget build(context) {
-    final currentQuestion =
-        MultipleChoiceQuiz().questions[currentQuestionIndex];
+    var currentQuestion = MultipleChoiceQuiz().questions[currentQuestionIndex];
     return SizedBox(
       width: double.infinity,
       child: Container(
-        margin: const EdgeInsets.all(100),
+        margin: const EdgeInsets.all(20),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -34,7 +35,7 @@ class _QuestionScreenState extends State<QuestionScreen> {
             Text(
               currentQuestion.question,
               style: GoogleFonts.lato(
-                fontSize: 30,
+                fontSize: 20,
                 fontWeight: FontWeight.bold,
                 color: Colors.black,
               ),
@@ -46,7 +47,9 @@ class _QuestionScreenState extends State<QuestionScreen> {
             ...currentQuestion.getShuffledOptions().map((option) {
               return MultipleOptionButton(
                 optionText: option,
-                onOptionSelect: onOptionSelect,
+                onOptionSelect: () {
+                  onOptionSelect(option);
+                },
               );
             }),
           ],
