@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class StartScreen extends StatelessWidget {
+class QuizStartScreen extends StatelessWidget {
   final void Function() startQuiz;
-  const StartScreen(this.startQuiz, {super.key});
+  const QuizStartScreen(this.startQuiz, {super.key});
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -23,7 +23,7 @@ class StartScreen extends StatelessWidget {
             style: GoogleFonts.lato(
               fontSize: 20,
               fontWeight: FontWeight.bold,
-              color: Colors.black,
+              color: const Color.fromARGB(132, 52, 48, 48),
             ),
           ),
           const SizedBox(
@@ -36,14 +36,14 @@ class StartScreen extends StatelessWidget {
             ),
             icon: const Icon(
               Icons.arrow_right_alt,
-              color: Colors.black,
+              color: Color.fromARGB(132, 52, 48, 48),
             ),
             label: Text(
               'Start Quize',
               style: GoogleFonts.lato(
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
-                color: Colors.black,
+                color: const Color.fromARGB(132, 52, 48, 48),
               ),
             ),
           ),

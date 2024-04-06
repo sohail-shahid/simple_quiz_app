@@ -4,7 +4,7 @@ class MultipleChoiceQuestion {
   final List<String> options;
   final String correctAnswer;
 
-  List<String> getShuffledOptions() {
+  List<String> get shuffledOptions {
     final List<String> optionCopy = List.of(options);
     optionCopy.shuffle();
     return optionCopy;

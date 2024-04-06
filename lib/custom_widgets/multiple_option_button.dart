@@ -10,10 +10,13 @@ class MultipleOptionButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: onOptionSelect,
+      style: const ButtonStyle(
+        backgroundColor: MaterialStatePropertyAll(Colors.white),
+      ),
       child: Text(
         optionText,
         style: const TextStyle(
-          color: Colors.black,
+          color: Color.fromARGB(132, 52, 48, 48),
           fontSize: 14,
         ),
         textAlign: TextAlign.center,

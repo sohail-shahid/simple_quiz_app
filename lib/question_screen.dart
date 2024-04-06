@@ -37,21 +37,21 @@ class _QuestionScreenState extends State<QuestionScreen> {
               style: GoogleFonts.lato(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
-                color: Colors.black,
+                color: const Color.fromARGB(132, 52, 48, 48),
               ),
               textAlign: TextAlign.center,
             ),
             const SizedBox(
               height: 20,
             ),
-            ...currentQuestion.getShuffledOptions().map((option) {
-              return MultipleOptionButton(
+            ...currentQuestion.shuffledOptions.map(
+              (option) => MultipleOptionButton(
                 optionText: option,
                 onOptionSelect: () {
                   onOptionSelect(option);
                 },
-              );
-            }),
+              ),
+            ),
           ],
         ),
       ),
